@@ -34,6 +34,6 @@ export class NavbarComponent {
     logout() {
         window.sessionStorage.removeItem("connecsi_key");
         this.authService.setLoginStatus(false);
-        this.router.navigate(['/platform']);
+        this.router.navigate(['/pages/login']);
     }
 }
