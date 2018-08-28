@@ -9,6 +9,7 @@ import { UserProfilePageComponent } from "./user-profile/user-profile-page.compo
 import { SearchComponent } from './search/search.component';
 import { FaqComponent } from './faq/faq.component';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
+import { UserSettingPageComponent } from './user-setting/user-setting-page.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,13 @@ const routes: Routes = [
       {
         path: 'profile',
         component: UserProfilePageComponent,
+        data: {
+          title: 'User Profile Page'
+        }
+      },
+      {
+        path: 'setting',
+        component: UserSettingPageComponent,
         data: {
           title: 'User Profile Page'
         }

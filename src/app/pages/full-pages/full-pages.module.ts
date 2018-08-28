@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import { FormsModule } from '@angular/forms';
+
 
 import { FullPagesRoutingModule } from "./full-pages-routing.module";
-import { ChartistModule} from 'ng-chartist';
+import { ChartistModule } from 'ng-chartist';
 import { AgmCoreModule } from '@agm/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,7 +16,8 @@ import { UserProfilePageComponent } from "./user-profile/user-profile-page.compo
 import { SearchComponent } from './search/search.component';
 import { FaqComponent } from './faq/faq.component';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
-
+import { UserSettingPageComponent } from './user-setting/user-setting-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -25,18 +26,20 @@ import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.componen
         FormsModule,
         ChartistModule,
         AgmCoreModule,
-        NgbModule
+        NgbModule,
+        ReactiveFormsModule
     ],
-    declarations: [       
+    declarations: [
         GalleryPageComponent,
-        InvoicePageComponent,       
+        InvoicePageComponent,
         HorizontalTimelinePageComponent,
         HorizontalTimelineComponent,
         VerticalTimelinePageComponent,
         UserProfilePageComponent,
         SearchComponent,
         FaqComponent,
-        KnowledgeBaseComponent
+        KnowledgeBaseComponent,
+        UserSettingPageComponent
     ]
 })
 export class FullPagesModule { }
