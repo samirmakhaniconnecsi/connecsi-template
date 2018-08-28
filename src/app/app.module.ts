@@ -1,5 +1,5 @@
 
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,14 +19,16 @@ import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 import { DragulaService } from 'ng2-dragula';
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
-
 import * as $ from 'jquery';
-
-
+import { BrandService } from './shared/services/brand.service';
+import { UserService } from './shared/services/user.service';
+import { YoutubeService } from './shared/services/youtube.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-  }
+}
 
 @NgModule({
     declarations: [
@@ -42,22 +44,28 @@ export function createTranslateLoader(http: HttpClient) {
         HttpClientModule,
         ToastrModule.forRoot(),
         NgbModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient]
-              }
+            }
         }),
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyBr5_picK8YJK7fFR2CPzTVMj6GG1TtRGo'
         })
     ],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [
         AuthService,
         AuthGuard,
-        DragulaService
+        DragulaService,
+        UserService,
+        BrandService,
+        YoutubeService
     ],
     bootstrap: [AppComponent]
 })
