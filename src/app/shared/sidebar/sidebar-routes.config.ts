@@ -181,4 +181,9 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard/dashboard1', title: 'Dashboard', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     { path: '/search/searchhome', title: 'Serach', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/pages/comingsoon', title: 'Profile', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/pages/comingsoon', title: 'Messages', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/pages/comingsoon', title: 'Partnerships', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/pages/comingsoon', title: 'Campaigns', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
+    { path: '/pages/comingsoon', title: 'Payments', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] }
 ]
