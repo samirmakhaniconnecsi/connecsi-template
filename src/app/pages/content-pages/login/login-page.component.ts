@@ -42,7 +42,7 @@ export class LoginPageComponent implements OnInit {
                 this.toastrService.success("Login is successfully Done");
                 window.sessionStorage.setItem("connecsi_key", res.body["user_id"]);
                 this.authService.setLoginStatus(true);
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard/dashboard1']);
             }), (error) => {
                 this.validation=true;
                 this.toastrService.error("Something went wrong!")

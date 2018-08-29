@@ -8,6 +8,10 @@ export const Full_ROUTES: Routes = [
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
   {
+    path: 'search',
+    loadChildren: './search/search.module#SearchModule'
+  },
+  {
     path: 'calendar',
     loadChildren: './calendar/calendar.module#CalendarsModule'
   },
@@ -15,7 +19,7 @@ export const Full_ROUTES: Routes = [
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsNg2Module'
   },
-   {
+  {
     path: 'forms',
     loadChildren: './forms/forms.module#FormModule'
   },
