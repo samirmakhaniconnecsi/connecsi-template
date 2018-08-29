@@ -1,1 +1,123 @@
-<p>search Home</p>
+<div class="row" style="justify-content: center">
+  <div class="col-xl-12 col-lg-12  col-md-12 col-12">
+    <div class="card gradient-blackberry">
+      <div class="card-body" style="padding: 12px">
+
+        <div class="form-body">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+              <div class="form-group">
+                <ng-template #rt let-r="result" let-t="term">
+                  {{ r.video_cat_name}}
+                </ng-template>
+                <input id="typeahead-focus" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"
+                  (focus)="focus$.next($event.target.value)" [inputFormatter]="formatter" placeholder="Enter Keywords"
+                  [disabled]="!searchAllowed" [resultTemplate]="rt" (click)="click$.next($event.target.value)"
+                  #instance="ngbTypeahead" />
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+              <div class="form-group">
+                <label for="disabledInput">Channel</label>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option value="facebook">Facebook</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="youtube">Youtube</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+              <div class="form-group">
+                <label for="disabledInput">Country</label>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option *ngFor="let country of countries" value="{{country.region_code}}">{{country.country_name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+              <div class="form-group">
+                <label>Followers</label>
+                <range-slider min="0" max="25000" minValue="0" maxValue="25000" step="10">
+                </range-slider>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 mb-1">
+              <div class="form-group spacing">
+                <button type="button" class="btn btn-raised btn-raised btn-primary customButton">
+                  <i class="fa fa-check-square-o"></i> Save
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 col-lg-6 col-md-4 mb-1 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="px-3 py-3">
+          <div class="media">
+            <div class="media-body text-left">
+              <h3 class="mb-1 danger">278</h3>
+              <span>New Projects</span>
+            </div>
+            <div class="media-right align-self-center">
+              <i class="icon-rocket danger font-large-2 float-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6 col-md-4 mb-1 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="px-3 py-3">
+          <div class="media">
+            <div class="media-body text-left">
+              <h3 class="mb-1 danger">278</h3>
+              <span>New Projects</span>
+            </div>
+            <div class="media-right align-self-center">
+              <i class="icon-rocket danger font-large-2 float-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6 col-md-4 mb-1 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="px-3 py-3">
+          <div class="media">
+            <div class="media-body text-left">
+              <h3 class="mb-1 danger">278</h3>
+              <span>New Projects</span>
+            </div>
+            <div class="media-right align-self-center">
+              <i class="icon-rocket danger font-large-2 float-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
