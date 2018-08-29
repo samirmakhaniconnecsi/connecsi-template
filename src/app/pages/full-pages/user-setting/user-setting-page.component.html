@@ -16,7 +16,8 @@
           <div class="col-2">
             <div class="align-self-center halfway-fab text-center">
               <a class="profile-image">
-                <img src="assets/img/portrait/avatars/avatar-08.png" class="rounded-circle img-border gradient-summer width-100" alt="Card image">
+                <img src="assets/img/portrait/avatars/avatar-08.png" class="rounded-circle img-border gradient-summer width-100"
+                  alt="Card image">
               </a>
             </div>
           </div>
@@ -113,8 +114,8 @@
                           <a>
                             <i class="icon-present font-small-3"></i> *First Name:</a>
                         </span>
-                        <input type="text" class="form-control" formControlName="first_name" required="required" name="title" id="title" placeholder="First Name"
-                          required>
+                        <input type="text" class="form-control" formControlName="first_name" required="required" name="title"
+                          id="title" placeholder="First Name" required>
                       </div>
                     </li>
                     <li class="mb-2">
@@ -123,8 +124,8 @@
                           <a>
                             <i class="ft-map-pin font-small-3"></i> *Business Email:</a>
                         </span>
-                        <input type="text" class="form-control" required="required" formControlName="email_id" name="email" id="title" placeholder="Email Id"
-                          required>
+                        <input type="text" class="form-control" required="required" formControlName="email_id" name="email"
+                          id="title" placeholder="Email Id" required>
                       </div>
 
                     </li>
@@ -134,7 +135,8 @@
                           <a>
                             <i class="ft-globe font-small-3"></i> Position:</a>
                         </span>
-                        <input type="text" class="form-control" formControlName="position" name="position" id="title" placeholder="Position">
+                        <input type="text" class="form-control" formControlName="position" name="position" id="title"
+                          placeholder="Position">
                       </div>
                     </li>
                   </ul>
@@ -148,8 +150,8 @@
                           <a>
                             <i class="ft-user font-small-3"></i>*Last Name::</a>
                         </span>
-                        <input type="text" class="form-control" required="required" formControlName="last_name" name="last_name" id="title" placeholder="Last Name"
-                          required>
+                        <input type="text" class="form-control" required="required" formControlName="last_name" name="last_name"
+                          id="title" placeholder="Last Name" required>
                       </div>
                     </li>
                     <li class="mb-2">
@@ -158,7 +160,8 @@
                           <a>
                             <i class="ft-mail font-small-3"></i> Phone:</a>
                         </span>
-                        <input type="text" class="form-control" formControlName="phone" name="phone" id="title" placeholder="Phone">
+                        <input type="text" class="form-control" formControlName="phone" name="phone" id="title"
+                          placeholder="Phone">
                       </div>
                     </li>
                   </ul>
@@ -218,8 +221,8 @@
                           <a>
                             <i class="icon-present font-small-3"></i> *Company Name:</a>
                         </span>
-                        <input type="text" class="form-control" formControlName="company_name" required="required" name="title" id="title" placeholder="Company Name"
-                          required>
+                        <input type="text" class="form-control" formControlName="company_name" required="required" name="title"
+                          id="title" placeholder="Company Name" required>
                       </div>
                     </li>
                     <li class="mb-2">
@@ -241,7 +244,8 @@
                           <a>
                             <i class="ft-globe font-small-3"></i> City:</a>
                         </span>
-                        <input type="text" class="form-control" formControlName="city" name="title" id="title" placeholder="City">
+                        <input type="text" class="form-control" formControlName="city" name="title" id="title"
+                          placeholder="City">
                       </div>
                     </li>
                     <li class="mb-2">
@@ -250,7 +254,8 @@
                           <a>
                             <i class="ft-globe font-small-3"></i> Business Sector:</a>
                         </span>
-                        <input type="text" class="form-control" name="title" id="title" formControlName="business_sector" placeholder="Business Sector">
+                        <input type="text" class="form-control" name="title" id="title" formControlName="business_sector"
+                          placeholder="Business Sector">
                       </div>
                     </li>
                   </ul>
@@ -264,7 +269,8 @@
                           <a>
                             <i class="ft-user font-small-3"></i> URL:</a>
                         </span>
-                        <input type="text" class="form-control" required="required" name="title" id="title" placeholder="Title" required>
+                        <input type="text" class="form-control" required="required" name="title" id="title" placeholder="Title"
+                          required>
                       </div>
                     </li>
                     <li class="mb-2">
@@ -273,8 +279,8 @@
                           <a>
                             <i class="ft-mail font-small-3"></i> *No of Employees:</a>
                         </span>
-                        <input type="number" class="form-control" required="required" name="title" id="title" formControlName="no_of_employees" placeholder="No of Employees"
-                          required>
+                        <input type="number" class="form-control" required="required" name="title" id="title"
+                          formControlName="no_of_employees" placeholder="No of Employees" required>
                       </div>
                     </li>
                     <li class="mb-2">
@@ -283,8 +289,15 @@
                           <a>
                             <i class="ft-mail font-small-3"></i> Budget(Monthly):</a>
                         </span>
-                        <input type="text" class="form-control" required="required" name="title" id="title" formControlName="monthly_budget" placeholder="Budget(Monthly)"
-                          required>
+                        <input type="text" class="form-control" required="required" name="title" id="title"
+                          formControlName="monthly_budget" placeholder="Budget(Monthly)" required>
+                      </div>
+                    </li>
+                    <li class="mb-2">
+                      <div class="form-actions spacing">
+                        <button type="button" (click)="updatebrandUserUser(brandDetilas)" [disabled]="!brandDetilas.valid" class="btn btn-raised btn-raised btn-primary customButton">
+                          <i class="fa fa-check-square-o"></i> Save
+                        </button>
                       </div>
                     </li>
                   </ul>

@@ -1,4 +1,4 @@
-[
+export const country=[
   {
     "name": "Afghanistan",
     "code": "AF"

@@ -4,7 +4,7 @@ import { BrandDetails } from '../../../shared/model/brandDetils';
 import { BrandService } from '../../../shared/services/brand.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-
+import { country } from '../../../shared/utilities/country';
 
 @Component({
     selector: 'app-user-setting-page',
@@ -24,8 +24,8 @@ export class UserSettingPageComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.countries = country;
         this.profileDetilas = BrandDetails;
-        this.countries = [];
         this.initbrandDetilasForm();
         this.getBranDetilas();
     }

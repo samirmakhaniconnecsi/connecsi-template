@@ -1,6 +1,14 @@
-.profile-menu{
-    .active{
-        border-bottom: 2px solid;
-        margin-bottom: -2px;
-    }
+.profile-menu {
+  .active {
+    border-bottom: 2px solid;
+    margin-bottom: -2px;
+  }
+}
+
+.spacing {
+  border: none;
+  text-align: right;
+  .customButton{
+      width: 156px;
+  }
 }
