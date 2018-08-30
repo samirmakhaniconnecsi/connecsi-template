@@ -36,4 +36,17 @@ export class YoutubeService {
 
             ));
     }
+
+    getVideosByFilters(data, channel): Observable<any> {
+        const url = this.domain + "/api/Youtube/searchChannels/" + channel;
+        return this.httpClient.post(url, data, { observe: 'response' }).pipe(
+            map((res: HttpResponse<any>) => {
+                return res;
+            },
+                (error) => {
+                    return error;
+                }
+
+            ));
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as Chartist from 'chartist';
 import { ChartType, ChartEvent } from "ng-chartist/dist/chartist.component";
 import { ActivatedRoute } from '@angular/router';
@@ -13,14 +13,6 @@ const data: any = require('../../shared/data/chartist.json');
 export interface Chart {
 
 }
-const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
-    'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-    'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-    'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-    'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-    'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-    'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 @Component({
     selector: 'app-searchHome',
     templateUrl: './searchHome.component.html',
@@ -31,11 +23,17 @@ export class SearchHomeComponent implements OnInit {
     countries;
     videoCategories;
     selected: string;
-    searchAllowed:boolean;
+    searchAllowed: boolean;
+    selectedvideoId: any = 0;
+    selectedChannel: string = 'facebook';
+    selectedCountry: string = 'DZ';
+    minValue = 0;
+    @ViewChild('div') div;
     constructor(private youtubeService: YoutubeService,
         private activatedRoute: ActivatedRoute) { }
     ngOnInit() {
-        this.searchAllowed=false;
+
+        this.searchAllowed = false;
         this.getcountryCode();
         this.getCategories();
     }
@@ -58,7 +56,7 @@ export class SearchHomeComponent implements OnInit {
             this.youtubeService.getvideoCategories().subscribe((res) => {
                 if (res.status === 200) {
                     this.videoCategories = res.body.data;
-                    this.searchAllowed=true;
+                    this.searchAllowed = true;
                 } else {
 
                 }
@@ -88,4 +86,42 @@ export class SearchHomeComponent implements OnInit {
         video_cat_name: string
     }) => x.video_cat_name;
 
+    searchVideo() {
+        let category_id;
+        if (this.model !== undefined && this.model.video_cat_id !== undefined) {
+            category_id = this.model.video_cat_id;
+        } else {
+            category_id = "";
+        }
+        let requestObj = {
+            "category_id": category_id,
+            "country": this.selectedCountry,
+            "min_lower": this.div.minValue,
+            "max_upper": this.div.maxValue,
+            "sort_order": "DESC"
+        }
+        this.youtubeService.getVideosByFilters(requestObj, this.selectedChannel).subscribe((res) => {
+            if (res.status === 200) {
+                console.log(res.body.data)
+            } else {
+
+            }
+
+        }), (error) => {
+
+        }
+
+    }
+    selectChangeHandler(event: any) {
+        //update the ui
+        this.selectedChannel = event.target.value;
+    }
+    selectCountryChangeHandler(event: any) {
+        //update the ui
+        this.selectedCountry = event.target.value;
+    }
+    selectedItem(item) {
+        this.selectedvideoId = item.item.video_cat_id;
+        this.model = item.item.video_cat_name;
+    }
 }
