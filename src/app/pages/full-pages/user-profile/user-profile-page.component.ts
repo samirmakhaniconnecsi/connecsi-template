@@ -37,9 +37,10 @@ export class UserProfilePageComponent implements OnInit {
 
                 }
 
-            }), (error) => {
+            }, (error) => {
 
             }
+            )
         });
 
     }

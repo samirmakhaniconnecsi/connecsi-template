@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class LoginPageComponent implements OnInit {
     loginForm: FormGroup;
-    validation:boolean;
+    validation: boolean;
     constructor(private router: Router,
         private route: ActivatedRoute,
         private userservice: UserService,
@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit {
         private authService: AuthService,
         private toastrService: ToastrService) { }
     ngOnInit() {
-        this.validation=false;
+        this.validation = false;
         this.initLoginForm();
     }
     initLoginForm() {
@@ -36,17 +36,17 @@ export class LoginPageComponent implements OnInit {
                 const control = loginForm.get(field);
                 control.markAsTouched({ onlySelf: true });
             })
-            this.validation=true;
+            this.validation = true;
         } else {
             this.userservice.loginService(loginForm.value).subscribe((res) => {
                 this.toastrService.success("Login is successfully Done");
                 window.sessionStorage.setItem("connecsi_key", res.body["user_id"]);
                 this.authService.setLoginStatus(true);
                 this.router.navigate(['/dashboard/dashboard1']);
-            }), (error) => {
-                this.validation=true;
-                this.toastrService.error("Something went wrong!")
+            }, (error) => {
+                this.toastrService.error("Something went wrong!");
             }
+            )
         }
     }
     // On Forgot password link click

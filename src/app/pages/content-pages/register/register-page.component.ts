@@ -54,9 +54,10 @@ export class RegisterPageComponent implements OnInit {
                     } else {
                         this.toastrService.error("Registration is not completed successfully!")
                     }
-                }), (error) => {
+                }, (error) => {
                     this.toastrService.error("Registration is not completed successfully!")
                 }
+                )
             } else {
                 this.toastrService.error("Check all the fields again.")
             }

@@ -68,13 +68,11 @@ export class UserSettingPageComponent implements OnInit {
                         business_sector: data.business_sector
                     });
                     this.profileDetilas = data;
-                } else {
-
                 }
-
-            }), (error) => {
-
+            }, (error) => {
+               
             }
+            )
         });
     }
     updatebrandUserUser(brandDetilas) {
@@ -93,6 +91,8 @@ export class UserSettingPageComponent implements OnInit {
                 } else {
                     this.toastrService.error("Try after sometime!");
                 }
+            }, (error) => {
+                this.toastrService.error("Something went wrong!")
             })
         }
     }
